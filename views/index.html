@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/static/stylesheets/style.css' />
+    <link rel="shortcut icon" href="/static/images/icecream.png" type="image/x-icon"/>
+    <style>
+      table{
+        border: solid 1px #f1f1f1;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <table>
+      <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+      </tr>
+      {% for person in list %}
+      <tr>
+        <td>{{ person.num }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.gender }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="index2.html">页面跳转</a><br />
+    <input id="submit" type="submit" value="显示文本" />
+    <script type="text/javascript" src="/static/javascripts/jquery.min.js"></script>
+    <script>
+        $("#submit").click(function () {
+            $.ajax({
+                url:'/getpost',
+                type:'post',
+                dataType:'json',
+                data: {"firstName":"lu","lastName":"chen"},
+                success:function (data) {
+                    alert("my name is"+" "+ data.firstName + data.lastName);
+                }
+            });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "user1": {
+    "name": "commonjs",
+    "password": "123456",
+    "profession": "teacher",
+    "id": 1
+  },
+  "user2": {
+    "name": "may",
+    "password": "123465",
+    "profession": "librarian",
+    "id": 2
+  },
+  "user3": {
+    "name": "lu",
+    "password": "1234567",
+    "profession": "clerk",
+    "id": 3
+  }
+}
